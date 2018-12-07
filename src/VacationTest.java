@@ -22,5 +22,7 @@ public class VacationTest
       
       System.out.println();
       System.out.println(vacation);
+      
+      System.out.println(name);
    }
 }
