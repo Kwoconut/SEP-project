@@ -13,7 +13,7 @@ public class VacationTest
       
       Employee employee = new Employee(name,"VM",list);
       
-      Vacation vacation = new Vacation(employee,"Tata lor haha vreau vacanta",false,new MyDate(28,7,1999),new MyDate(28,7,2000));
+      Vacation vacation = new Vacation(employee,"Tata lor haha vreau vacanta",new MyDate(28,7,1999),new MyDate(28,7,2000));
       
       
       System.out.println(vacation);
