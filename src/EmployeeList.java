@@ -106,5 +106,16 @@ public class EmployeeList
    {
       return list.get(index).getStatus();
    }
+   
+   public String toString()
+   {
+      String s = "";
+      for (Employee element : list)
+      {
+         s += "\n";
+         s += element.toString();
+      }
+      return s;
+   }
 }
 
