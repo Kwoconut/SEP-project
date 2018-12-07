@@ -203,6 +203,13 @@ public class MyDate
       int d2 = other.year * 360 + other.month * 30 + other.day;
       return d1 < d2;
    }
+   
+   public boolean isAfter(MyDate other)
+   {
+      int d1 = year * 360 + month * 30 + day;
+      int d2 = other.year * 360 + other.month * 30 + other.day;
+      return d1 > d2;
+   }
 
    public String starsignElement()
    {
