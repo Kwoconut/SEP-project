@@ -122,4 +122,18 @@ public class Analysis
       }
       return s;
    }
-}
+   
+   public boolean equals(Object obj)
+   {
+      if (!(obj instanceof Analysis))
+      {
+         return false;
+      }
+      Analysis other = (Analysis) obj;
+      return type.equals(other.getType())
+      && matrix.equals(other.getMatrix())
+      && numberOfEmployees == other.getMaxNumberOfEmployees()
+      && date.equals(other.getDate());
+   }
+}    
+  
