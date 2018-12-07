@@ -25,6 +25,21 @@ public class Name
       this.lastName = lastName;
    }
    
+   public void setName(String name)
+   {
+      this.name = name;
+   }
+   
+   public boolean equals(Object obj)
+   {
+      if(!(obj instanceof Name))
+      {
+         return false;
+      }
+      Name other = (Name) obj;
+      return name.equals(other.getName()) && lastName.equals(other.getLastName());
+   }
+   
    public String toString()
    {
       return name + " " + lastName;

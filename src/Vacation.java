@@ -13,6 +13,7 @@ public class Vacation extends MyDate
       this.reason = reason;
       this.startDate = startDate.copy();
       this.endDate = endDate.copy();
+      employee.setStatusVacationPending();
    }
 
    public void setToChecked()
@@ -33,6 +34,21 @@ public class Vacation extends MyDate
    public String getReason()
    {
       return reason;
+   }
+   
+   public Employee getEmployee()
+   {
+      return employee;
+   }
+   
+   public MyDate getStartDate()
+   {
+      return startDate;
+   }
+   
+   public MyDate getEndDate()
+   {
+      return endDate;
    }
 
    public String toString()

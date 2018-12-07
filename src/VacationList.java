@@ -16,6 +16,7 @@ public class VacationList
    public void approveVacation(int index)//tre de schimbat class diagramu aici
    {
       list.get(index).setToChecked();
+      list.get(index).getEmployee().setStatusVacation();
    }
    public void declineVacation(int index)
    {
@@ -32,6 +33,17 @@ public class VacationList
    public String getReason(int index) 
    {
       return list.get(index).getReason();
+   }
+   public Vacation getVacationByEmployee(Employee employee)
+   {
+      for (Vacation element : list)
+      {
+         if (element.getEmployee().equals(employee))
+         {
+            return element;
+         }
+      }
+      return null;
    }
    public String toString()
    {

@@ -21,9 +21,9 @@ public class EmployeeListTest
    empList.addEmployee(employee2);
    empList.addEmployee(employee);
    
-   empList.getEmployee(0).train("Fat");
-   empList.getEmployee(0).train("Cereale");
-   empList.getEmployee(0).train("Glucoze");
+   empList.getEmployee(employee).train("Fat");
+   empList.getEmployee(employee).train("Cereale");
+   empList.getEmployee(employee).train("Glucoze");
    
    empList.setStatusTraining(0);
    

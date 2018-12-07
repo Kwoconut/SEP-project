@@ -38,6 +38,7 @@ public class Employee
    public void train(String type)
    {
       training.getTraining(type).train();
+      setStatusTraining();
    }
 
    public TrainingList getTrainingList()
@@ -83,6 +84,16 @@ public class Employee
    public String getStatus()
    {
       return status;
+   }
+   
+   public boolean equals(Object obj)
+   {
+      if (!(obj instanceof Employee))
+      {
+         return false;
+      }
+      Employee other = (Employee) obj;
+      return name.equals(other.getName()) && ID.equals(other.getID());
    }
 
    public String toString()

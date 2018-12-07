@@ -25,24 +25,31 @@ public class EmployeeList
       list.remove(index);
    }
 
-   public Employee getEmployee(int index)
+   public Employee getEmployee(Employee employee)
    {
-      return list.get(index);
+      for (Employee element : list)
+      {
+         if (element.equals(employee))
+         {
+            return element;
+         }
+      }
+      return null;
    }
 
-   public Employee[] getHiredEmployees()
+   public ArrayList<Employee> getHiredEmployees()
    {
       ArrayList<Employee> hiredEmployees = new ArrayList<Employee>();
       for (int i = 0; i < list.size(); i++)
       {
-         if (list.get(i).getState() ==false )
+         if (list.get(i).getState() == false )
          {
             hiredEmployees.add(list.get(i));
          }
       }
-      return (Employee[]) hiredEmployees.toArray();
+      return hiredEmployees;
    }
-   public Employee[] getFiredEmployees()
+   public ArrayList<Employee> getFiredEmployees()
    {
       ArrayList<Employee> firedEmployees = new ArrayList<Employee>();
       for (int i = 0; i < list.size(); i++)
@@ -52,7 +59,7 @@ public class EmployeeList
             firedEmployees.add(list.get(i));
          }
       }
-      return (Employee[]) firedEmployees.toArray();
+      return firedEmployees;
    }
    
    public void setToHired(int index)
