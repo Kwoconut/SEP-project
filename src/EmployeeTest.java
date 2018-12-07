@@ -20,5 +20,6 @@ public class EmployeeTest
    System.out.println(employee.toString());
    employee.setToHired();
    System.out.println("Fired?" + employee.getState());
+   System.out.println("hi");
    }
 }
