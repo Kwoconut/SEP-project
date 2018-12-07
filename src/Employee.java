@@ -9,6 +9,7 @@ public class Employee
    public static String status_available = "Available";
    public static String status_unavailable = "Unavailable";
    public static String status_vacation = "Vacation";
+   public static String status_vacationPending = "Vacation Pending";
    public static String status_ontraining = "Training";
 
    public Employee(Name name, String ID, TrainingList training)
