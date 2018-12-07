@@ -7,8 +7,7 @@ public class Vacation extends MyDate
    private MyDate endDate;
    private Employee employee;
 
-   public Vacation(Employee employee, String reason,
-         MyDate startDate, MyDate endDate)
+   public Vacation(Employee employee, String reason, MyDate startDate, MyDate endDate)
    {
       this.employee = employee;
       this.reason = reason;
