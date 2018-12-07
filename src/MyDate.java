@@ -1,6 +1,6 @@
 import java.util.Calendar;
 import java.util.GregorianCalendar;
-//sugi pula valeriu
+
 public class MyDate
 {
    private int day;
