@@ -38,7 +38,7 @@ public class Vacation extends MyDate
    public String toString()
    {
       String s = "";
-      s += employee + "\n";
+      s += employee.getName() + "\n";
       s += reason + "\n";
       s += check + "\n";
       s += startDate + "\n";
