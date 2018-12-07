@@ -74,6 +74,11 @@ public class Employee
    {
       status = status_ontraining;
    }
+   
+   public void setStatusVacationPending()
+   {
+      status = status_vacationPending;
+   }
 
    public String getStatus()
    {
