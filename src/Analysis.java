@@ -15,7 +15,7 @@ public class Analysis
       this.date = date;
       this.employees = new Employee[MaxNumberOfEmployees];
    }
-   andrusha loh
+  
    public String getType()
    {
       return type;
