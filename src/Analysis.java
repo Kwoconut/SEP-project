@@ -8,12 +8,12 @@ public class Analysis
    private boolean assigned;
    private Employee[] employees;
 
-   public Analysis(String type, String matrix, int MaxNumberOfEmployees, MyDate date)
+   public Analysis(String type, String matrix, int maxNumberOfEmployees, MyDate date)
    {
       this.type = type;
       this.matrix = matrix;
       this.date = date;
-      this.employees = new Employee[MaxNumberOfEmployees];
+      this.employees = new Employee[maxNumberOfEmployees];
    }
   
    public String getType()
