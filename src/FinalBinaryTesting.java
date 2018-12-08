@@ -43,5 +43,12 @@ public class FinalBinaryTesting
        tool.updateEmployeeListFile();
        tool.readEmployeeListFile();
        System.out.println(tool.getEmployeeList());
+       
+       System.out.println("-------------");
+       System.out.println("-------------");
+       System.out.println("-------------");
+       
+       WorkPlanningToolModelManager tool2 = new WorkPlanningToolModelManager();
+       System.out.println(tool2.getEmployeeList());
     }
 }

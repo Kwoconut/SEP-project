@@ -114,15 +114,23 @@ public class WorkPlanningToolModelManager implements WorkPlanningToolModel
       {
          File file = new File(filename);
          FileOutputStream fos = new FileOutputStream(file);
-         fos.close();
-         file.delete();
          out = new ObjectOutputStream(fos);
          out.writeObject(employeeList);
-         out.close();
       }
       catch (IOException e)
       {
          System.out.println("Exception:" + filename);
+      }
+      finally
+      {
+         try
+         {
+            out.close();
+         }
+         catch (IOException e)
+         {
+            e.printStackTrace();
+         }
       }
 
    }
@@ -136,15 +144,23 @@ public class WorkPlanningToolModelManager implements WorkPlanningToolModel
       {
          File file = new File(filename);
          FileOutputStream fos = new FileOutputStream(file);
-         fos.close();
-         file.delete();
          out = new ObjectOutputStream(fos);
          out.writeObject(analysisList);
-         out.close();
       }
       catch (IOException e)
       {
          System.out.println("Exception:" + filename);
+      }
+      finally
+      {
+         try
+         {
+            out.close();
+         }
+         catch (IOException e)
+         {
+            e.printStackTrace();
+         }
       }
    }
 
@@ -157,15 +173,23 @@ public class WorkPlanningToolModelManager implements WorkPlanningToolModel
       {
          File file = new File(filename);
          FileOutputStream fos = new FileOutputStream(file);
-         fos.close();
-         file.delete();
          out = new ObjectOutputStream(fos);
          out.writeObject(vacationList);
-         out.close();
       }
       catch (IOException e)
       {
          System.out.println("Exception:" + filename);
+      }
+      finally
+      {
+         try
+         {
+            out.close();
+         }
+         catch (IOException e)
+         {
+            e.printStackTrace();
+         }
       }
 
    }
@@ -319,7 +343,5 @@ public class WorkPlanningToolModelManager implements WorkPlanningToolModel
    {
       vacationList.approveVacation(index);
    }
-
-
 
 }
