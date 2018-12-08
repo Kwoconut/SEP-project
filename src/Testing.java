@@ -1,3 +1,12 @@
+import model.Analysis;
+import model.AnalysisList;
+import model.Employee;
+import model.EmployeeList;
+import model.MyDate;
+import model.Name;
+import model.Vacation;
+import model.VacationList;
+import model.WorkPlanningToolModelManager;
 
 public class Testing
 {
@@ -9,15 +18,11 @@ public class Testing
       Name name = new Name("Valeriu","Marandici");
       Name name2 = new Name("Valeriu","Romanciuc");
       Name name3 = new Name("Angel","Somicu");
-      
-      TrainingList list = new TrainingList();
-      list.addTraining(new Training("Fat"));
-      list.addTraining(new Training("Cereale"));
-      list.addTraining(new Training("Glucoze"));
+
      
-      Employee employee = new Employee(name,"VM",list);
-      Employee employee2 = new Employee(name2,"VMS",list);
-      Employee employee3 = new Employee(name3,"ALDRQ",list);
+      Employee employee = new Employee(name,"VM");
+      Employee employee2 = new Employee(name2,"VMS");
+      Employee employee3 = new Employee(name3,"ALDRQ");
       
       Analysis analysis = new Analysis ("Fat", "Feed", 2, MyDate.now());
       Analysis analysis2 = new Analysis ("Glucose", "Food", 3, new MyDate(20,10,1999));
@@ -32,7 +37,7 @@ public class Testing
       AnalysisList alist = new AnalysisList();
       EmployeeList elist = new EmployeeList();
       VacationList vacationList = new VacationList();
-      WorkPlanningTool tool = new WorkPlanningTool(alist,elist,vacationList);
+      WorkPlanningToolModelManager tool = new WorkPlanningToolModelManager();
       
       tool.addEmployee(employee);
       tool.addEmployee(employee2);

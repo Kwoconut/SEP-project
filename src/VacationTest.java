@@ -1,3 +1,7 @@
+import model.Employee;
+import model.MyDate;
+import model.Name;
+import model.Vacation;
 
 public class VacationTest
 {
@@ -5,13 +9,9 @@ public class VacationTest
    {
       Name name = new Name("Valeriu","Marandici");
       Name name2 = new Name("Valeriu","Romanciuc");
-      TrainingList list = new TrainingList();
+
       
-      list.addTraining(new Training("Fat"));
-      list.addTraining(new Training("Cereale"));
-      list.addTraining(new Training("Glucoze"));
-      
-      Employee employee = new Employee(name,"VM",list);
+      Employee employee = new Employee(name,"VM");
       
       Vacation vacation = new Vacation(employee,"Tata lor haha vreau vacanta",new MyDate(28,7,1999),new MyDate(28,7,2000));
       

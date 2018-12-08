@@ -1,15 +1,17 @@
+package model;
+import java.io.Serializable;
 import java.util.Calendar;
 import java.util.GregorianCalendar;
 
-public class MyDate
+public class MyDate implements Serializable
 {
    private int day;
    private int month;
    private int year;
-   
-   public static final String[] STARSIGNS = { "Capricorn", "Aquarius", "Pisces", "Aries",
-      "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra", "Scorpio",
-      "Sagittarius" };
+
+   public static final String[] STARSIGNS = { "Capricorn", "Aquarius", "Pisces",
+         "Aries", "Taurus", "Gemini", "Cancer", "Leo", "Virgo", "Libra",
+         "Scorpio", "Sagittarius" };
 
    public MyDate(int day, int month, int year)
    {
@@ -203,7 +205,7 @@ public class MyDate
       int d2 = other.year * 360 + other.month * 30 + other.day;
       return d1 < d2;
    }
-   
+
    public boolean isAfter(MyDate other)
    {
       int d1 = year * 360 + month * 30 + day;
@@ -213,13 +215,26 @@ public class MyDate
 
    public String starsignElement()
    {
-      switch(starsign())
+      switch (starsign())
       {
-         case "Capricorn" : case "Taurus" : case "Virgo" : return "Earth";
-         case "Aquarius" : case "Gemini" : case "Libra" : return "Air";
-         case "Pisces" : case "Cancer" : case "Scorpio" : return "Water";
-         case "Aries" : case "Leo" : case "Sagittarius" : return "Fire";
-         default: return "????";
+         case "Capricorn":
+         case "Taurus":
+         case "Virgo":
+            return "Earth";
+         case "Aquarius":
+         case "Gemini":
+         case "Libra":
+            return "Air";
+         case "Pisces":
+         case "Cancer":
+         case "Scorpio":
+            return "Water";
+         case "Aries":
+         case "Leo":
+         case "Sagittarius":
+            return "Fire";
+         default:
+            return "????";
       }
    }
 

@@ -1,5 +1,7 @@
+package model;
+import java.io.Serializable;
 
-public class Name
+public class Name implements Serializable
 {
    private String name;
    private String lastName;
@@ -9,40 +11,41 @@ public class Name
       this.name = name;
       this.lastName = lastName;
    }
-   
+
    public String getName()
    {
       return name;
    }
-   
+
    public String getLastName()
    {
       return lastName;
    }
-   
+
    public void setLastName(String lastName)
    {
       this.lastName = lastName;
    }
-   
+
    public void setName(String name)
    {
       this.name = name;
    }
-   
+
    public boolean equals(Object obj)
    {
-      if(!(obj instanceof Name))
+      if (!(obj instanceof Name))
       {
          return false;
       }
       Name other = (Name) obj;
-      return name.equals(other.getName()) && lastName.equals(other.getLastName());
+      return name.equals(other.getName())
+            && lastName.equals(other.getLastName());
    }
-   
+
    public String toString()
    {
       return name + " " + lastName;
    }
-   
+
 }

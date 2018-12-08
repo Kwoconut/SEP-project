@@ -1,3 +1,8 @@
+import model.Analysis;
+import model.AnalysisList;
+import model.Employee;
+import model.MyDate;
+import model.Name;
 
 public class Test
 {
@@ -8,14 +13,10 @@ public class Test
    Analysis analysis = new Analysis ("Fat", "Feed", 2, MyDate.now());
    Analysis analysis2 = new Analysis ("Glucose", "Food", 3, MyDate.now());
    AnalysisList alist = new AnalysisList();
-   TrainingList list = new TrainingList();
+
    
-   list.addTraining(new Training("Fat"));
-   list.addTraining(new Training("Cereale"));
-   list.addTraining(new Training("Glucoze"));
-   
-   Employee employee = new Employee(name,"VM",list);
-   Employee employee2 = new Employee(name2,"VMS",list);
+   Employee employee = new Employee(name,"VM");
+   Employee employee2 = new Employee(name2,"VMS");
    employee.train("Fat");
    employee.train("Cereale");
    employee.train("Glucoze");

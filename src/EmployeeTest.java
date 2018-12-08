@@ -1,3 +1,6 @@
+import model.Employee;
+import model.Name;
+import model.TrainingList;
 
 public class EmployeeTest
 {
@@ -5,12 +8,9 @@ public class EmployeeTest
    {
    Name name = new Name("Valeriu","Marandici");
    TrainingList list = new TrainingList();
+
    
-   list.addTraining(new Training("Fat"));
-   list.addTraining(new Training("Cereale"));
-   list.addTraining(new Training("Glucoze"));
-   
-   Employee employee = new Employee(name,"VM",list);
+   Employee employee = new Employee(name,"VM");
    employee.train("Fat");
    employee.train("Cereale");
    employee.train("Glucoze");

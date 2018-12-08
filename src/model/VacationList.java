@@ -1,39 +1,47 @@
+package model;
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class VacationList
+public class VacationList implements Serializable
 {
    private ArrayList<Vacation> list;
-   Vacation pendingVacation;
 
    public VacationList()
    {
       list = new ArrayList<Vacation>();
    }
+
    public void requestVacaction(Vacation vacation)
    {
       list.add(vacation);
    }
-   public void approveVacation(int index)//tre de schimbat class diagramu aici
+
+   public void approveVacation(int index)
    {
       list.get(index).setToChecked();
       list.get(index).getEmployee().setStatusVacation();
    }
+
    public void declineVacation(int index)
    {
       list.remove(index);
    }
-   public boolean isChecked(int index) 
+
+   public boolean isChecked(int index)
    {
       return list.get(index).isChecked();
    }
-   public void setReason(String reason,int index) 
+
+   public void setReason(String reason, int index)
    {
       list.get(index).setReason(reason);
    }
-   public String getReason(int index) 
+
+   public String getReason(int index)
    {
       return list.get(index).getReason();
    }
+
    public Vacation getVacationByEmployee(Employee employee)
    {
       for (Vacation element : list)
@@ -45,6 +53,7 @@ public class VacationList
       }
       return null;
    }
+
    public String toString()
    {
       String s = "";

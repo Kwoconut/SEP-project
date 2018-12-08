@@ -1,5 +1,7 @@
+package model;
+import java.io.Serializable;
 
-public class Analysis
+public class Analysis implements Serializable
 {
    private String type;
    private String matrix;
@@ -8,14 +10,15 @@ public class Analysis
    private boolean assigned;
    private Employee[] employees;
 
-   public Analysis(String type, String matrix, int maxNumberOfEmployees, MyDate date)
+   public Analysis(String type, String matrix, int maxNumberOfEmployees,
+         MyDate date)
    {
       this.type = type;
       this.matrix = matrix;
       this.date = date;
       this.employees = new Employee[maxNumberOfEmployees];
    }
-  
+
    public String getType()
    {
       return type;
@@ -122,7 +125,7 @@ public class Analysis
       }
       return s;
    }
-   
+
    public boolean equals(Object obj)
    {
       if (!(obj instanceof Analysis))
@@ -130,10 +133,8 @@ public class Analysis
          return false;
       }
       Analysis other = (Analysis) obj;
-      return type.equals(other.getType())
-      && matrix.equals(other.getMatrix())
-      && numberOfEmployees == other.getMaxNumberOfEmployees()
-      && date.equals(other.getDate());
+      return type.equals(other.getType()) && matrix.equals(other.getMatrix())
+            && numberOfEmployees == other.getMaxNumberOfEmployees()
+            && date.equals(other.getDate());
    }
-}    
-  
+}

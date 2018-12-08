@@ -1,5 +1,10 @@
+package model;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.Serializable;
+import java.util.Scanner;
 
-public class Employee
+public class Employee implements Serializable
 {
    private TrainingList training;
    private Name name;
@@ -12,12 +17,33 @@ public class Employee
    public static String status_vacationPending = "Vacation Pending";
    public static String status_ontraining = "Training";
 
-   public Employee(Name name, String ID, TrainingList training)
+   public Employee(Name name, String ID)
    {
       this.name = name;
       this.ID = ID;
-      this.training = training;
+      training = readTrainingTypes();
       status = status_available;
+   }
+
+   public TrainingList readTrainingTypes()
+   {
+      TrainingList list = new TrainingList();
+      String filename = "analysisTypes.txt";
+      try
+      {
+         File file = new File(filename);
+         Scanner in = new Scanner(file);
+         while (in.hasNext())
+         {
+            String line = in.nextLine();
+            list.addTraining(new Training(line));
+         }
+      }
+      catch (FileNotFoundException e)
+      {
+         e.printStackTrace();
+      }
+      return list;
    }
 
    public Name getName()
@@ -75,7 +101,7 @@ public class Employee
    {
       status = status_ontraining;
    }
-   
+
    public void setStatusVacationPending()
    {
       status = status_vacationPending;
@@ -85,7 +111,7 @@ public class Employee
    {
       return status;
    }
-   
+
    public boolean equals(Object obj)
    {
       if (!(obj instanceof Employee))
@@ -102,8 +128,8 @@ public class Employee
       s += name + "\n";
       s += ID + "\n";
       s += status + "\n\n";
-      s += "Trainings:\n" + training.toString() + "\n" ;
-      s += "Fired?" + " " +state;
+      s += "Trainings:\n" + training.toString() + "\n";
+      s += "Fired?" + " " + state +"\n";
 
       return s;
    }
