@@ -1,5 +1,7 @@
 import model.Employee;
+import model.MyDate;
 import model.Name;
+import model.Vacation;
 import model.WorkPlanningToolModelManager;
 
 public class FinalBinaryTesting
@@ -48,7 +50,12 @@ public class FinalBinaryTesting
        System.out.println("-------------");
        System.out.println("-------------");
        
+       tool.requestVacation(new Vacation(emp8, "Vacation reason", new MyDate(28,10,1999), new MyDate(30,10,1999)));
+       tool.requestVacation(new Vacation(emp6, "Vacation reason", new MyDate(28,10,1999), new MyDate(30,10,1999)));
+       tool.approveVacation(0);
+       tool.updateEmployeeListFile();
        WorkPlanningToolModelManager tool2 = new WorkPlanningToolModelManager();
+       tool2.setEmployeeUnavailable(emp7);
        System.out.println(tool2.getEmployeeList());
     }
 }

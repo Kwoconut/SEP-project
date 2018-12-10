@@ -2,11 +2,14 @@ package model;
 
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
+import java.io.PrintWriter;
 import java.util.ArrayList;
+import java.util.Scanner;
 
 public class WorkPlanningToolModelManager implements WorkPlanningToolModel
 {
@@ -194,6 +197,28 @@ public class WorkPlanningToolModelManager implements WorkPlanningToolModel
 
    }
 
+   public void updateEmployeeSecurityFile()
+   {
+      String filename = "employeeSecurity.txt";
+      File file = new File(filename);
+      
+      try
+      {
+         PrintWriter out = new PrintWriter(file);
+         for (int i = 0;i < employeeList.size();i++)
+         {
+            out.println(employeeList.getEmployee(i).getUsername() + "," + employeeList.getEmployee(i).getPassword());
+            out.flush();
+         }
+         out.close();
+      }
+      catch (FileNotFoundException e)
+      {
+         e.printStackTrace();
+      }
+
+   }
+   
    public AnalysisList getAnalysisList()
    {
       return analysisList;
@@ -342,6 +367,43 @@ public class WorkPlanningToolModelManager implements WorkPlanningToolModel
    public void approveVacation(int index)
    {
       vacationList.approveVacation(index);
+   }
+   
+   public String validateLogin(String user, String password)
+   {
+      if (user == null || user.isEmpty())
+      {
+         return "Username cannot be empty";
+      }
+      if (password == null || password.length() < 6)
+      {
+         return "Password must contain at least 6 letters";
+      }
+      String filename = "accounts.txt";
+      File file = new File(filename);
+      try
+      {
+        Scanner in = new Scanner(file);
+         while (in.hasNext())
+         {
+            String line = in.nextLine();
+            String[] token = line.split(",");
+            String readUser = token[0].trim();
+            String readPassword = token[1].trim();
+
+            if (user.equals(readUser) && password.equals(readPassword))
+            {
+               
+               return null;
+            }
+         }
+      }
+      catch (Exception e)
+      {
+         e.printStackTrace();
+      }
+      return "Username or password is invalid";
+      
    }
 
 }

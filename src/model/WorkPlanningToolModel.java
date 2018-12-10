@@ -15,6 +15,8 @@ public interface WorkPlanningToolModel
    public void updateAnalysisListFile();
 
    public void updateVacationListFile();
+   
+   public void updateEmployeeSecurityFile();
 
    public EmployeeList getEmployeeList();
 
@@ -57,4 +59,6 @@ public interface WorkPlanningToolModel
    public void requestVacation(Vacation vacation);
 
    public void approveVacation(int index);
+   
+   public String validateLogin(String username,String password);
 }

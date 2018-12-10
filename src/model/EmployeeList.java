@@ -38,6 +38,11 @@ public class EmployeeList implements Serializable
       }
       return null;
    }
+   
+   public Employee getEmployee(int index)
+   {
+       return list.get(index);
+   }
 
    public ArrayList<Employee> getHiredEmployees()
    {
