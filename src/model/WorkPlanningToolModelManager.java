@@ -379,7 +379,7 @@ public class WorkPlanningToolModelManager implements WorkPlanningToolModel
       {
          return "Password must contain at least 6 letters";
       }
-      String filename = "accounts.txt";
+      String filename = "employeeSecurity.txt";
       File file = new File(filename);
       try
       {
